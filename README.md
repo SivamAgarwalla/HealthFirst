@@ -5,12 +5,12 @@ A health app that will allow users that are feeling sick to record and track sym
 * If the patient's condition is increasing in severity then we can connect them with a doctor to monitor their status, because COVID-19 has made it much riskier to patients to go the hospital. Converting the speak to text, and providing an updating summary on how the user is doing would make it faster for the doctor to review how they are doing and prescribe them appropriately.
 
 **Core Features**
-[x] Make recording of our symptoms/well being
-[x] Convert recordings to text
-[x] Parse text for symptoms
-[x] Make predictions of possible diseases based on symptoms
-[x] Summarise health data in the form of list views and graphs
-[x] Send health summary to medical practitioners and/or family members
+- [x] Make recording of our symptoms/well being
+- [x] Convert recordings to text
+- [x] Parse text for symptoms
+- [x] Make predictions of possible diseases based on symptoms
+- [x] Summarise health data in the form of list views and graphs
+- [x] Send health summary to medical practitioners and/or family members
 
 ## About The Team
 Our team is a group of computer programmers at various institutions of higher learning. We developed this project for HackDavis 2021. Our main goal for this project is to develop a working MVP of our idea. We are passionate about tech for social good, and therefore we are eager to put our skills to use in these areas! 
