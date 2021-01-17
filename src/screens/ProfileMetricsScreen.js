@@ -64,8 +64,6 @@ const HomeRecordingScreen = () => {
 
   return (
     <View style={styles.container}>
-      {recordings && console.log(recordings.length)}
-      {console.log(formAverageData)}
       <Button title='Log Out' type='solid' onPress={logOut} />
       <View style={styles.headerSection}>
         <View style={styles.profilePhotoContainer}>
