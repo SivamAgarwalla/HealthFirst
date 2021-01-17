@@ -1,0 +1,14 @@
+# Logs
+*.log
+
+node_modules
+
+# OS
+.DS_Store
+.tmp
+.idea/audio-to-text-gcloud-master.iml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/modules.xml
+.idea/vcs.xml
