@@ -1,50 +1,45 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, FlatList, SafeAreaView, StatusBar } from 'react-native';
 import { Input, Card, Button } from 'react-native-elements';
 
+
 const ContactInfo = ({ contact, sendHealthSummary }) => {
+    console.log("Contacts are " + contact.data)
+
   return (
-    <View>
-      <Card key={contact.id} containerStyle={styles.contactCard}>
-        <Card.Title style={styles.doctorName}>
-          {contact.data.doctorName}
-        </Card.Title>
-        <Text style={styles.phoneNumber}>{contact.data.phoneNumber}</Text>
-        <Button
-          title='Send Summary'
-          type='solid'
-          onPress={() => {
-            sendHealthSummary(contact);
-          }}
-          containerStyle={{
-            width: 200,
-          }}
-          buttonStyle={{
-            backgroundColor: '#881D1D',
-          }}
-          titleStyle={{
-            fontFamily: 'Raleway_400Regular',
-          }}
-        />
-      </Card>
-    </View>
+      <View>
+      </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
   contactCard: {
     alignItems: 'center',
+    borderRadius: 8,
   },
   doctorName: {
-    fontSize: 20,
-    color: '#881D1D',
-    fontFamily: 'Raleway_600SemiBold',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#AC3834'
   },
   phoneNumber: {
     fontSize: 16,
-    color: '#881D1D',
     fontFamily: 'Raleway_600SemiBold',
     textAlign: 'center',
+    color: '#CAB7A1'
   },
 });
 
