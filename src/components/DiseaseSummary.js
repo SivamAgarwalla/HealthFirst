@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import DiseaseSummaryItem from './DiseaseSummaryItem';
+import { Divider } from 'react-native-elements';
 
 const DiseaseSummary = ({ recordings }) => {
   useEffect(() => {}, []);
   return (
     <View style={styles.container}>
       <Text style={styles.headerTitle}>Disease Predictions</Text>
+      <Divider />
       <ScrollView style={styles.containerScroll}>
         {recordings &&
           recordings.map((recording) => (
