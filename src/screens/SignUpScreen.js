@@ -69,6 +69,7 @@ const SignUpScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+  
       <Text style={styles.title}>Sign Up</Text>
       <TouchableOpacity onPress={addProfilePhoto}>
         <View style={styles.profilePhotoContainer}>
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 40,
+    fontSize: 30,
     color: '#881D1D',
     marginBottom: 20,
     fontFamily: 'Raleway_800ExtraBold',
@@ -188,6 +189,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  tinyLogo: {
+    width: 200,
+    height: 200,
+  }
 });
 
 export default SignUpScreen;
