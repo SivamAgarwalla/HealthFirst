@@ -18,7 +18,7 @@ Our team is a group of computer programmers at various institutions of higher le
 Contributors | Email
 ------------ | -------------
 Sivam Argawalla | sivam.argawalla@gmail.com
-Cagan Sevencan | Cagan email
+Cagan Sevencan | cagan.sevencan@sjsu.edu
 Swati Chayapathi | swathi.chayapathi@sjsu.edu
 Jolie Ip | ipjolie1507@gmail.com
 
