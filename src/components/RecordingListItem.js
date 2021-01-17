@@ -42,7 +42,8 @@ const RecordingListItem = ({ recordingData, recordingID }) => {
                 badgeStyle={{
                   backgroundColor: '#CAB7A1',
                   height: 25,
-                  width: 100,
+                  width: 140,
+                  marginRight: 8,
                 }}
               />
               <Badge
@@ -50,8 +51,8 @@ const RecordingListItem = ({ recordingData, recordingID }) => {
                 textStyle={{ fontSize: 15, fontFamily: 'Raleway_400Regular' }}
                 badgeStyle={{
                   backgroundColor: '#CAB7A1',
-                  height: 25,
-                  width: 130,
+                  height: 26,
+                  width: 140,
                 }}
               />
             </View>
@@ -66,8 +67,9 @@ const RecordingListItem = ({ recordingData, recordingID }) => {
                   }}
                   badgeStyle={{
                     backgroundColor: '#AC3834',
-                    height: 25,
-                    width: 80,
+                    height: 26,
+                    width: 85,
+                    marginRight: 5
                   }}
                 />
               ))}

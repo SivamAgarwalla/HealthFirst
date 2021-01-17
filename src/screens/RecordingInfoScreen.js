@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { db, FirebaseContext } from '../context/FirebaseContext';
-import { Input, Card, Button } from 'react-native-elements';
+import { Input, Card, Button, ListItem } from 'react-native-elements';
 import ContactInfo from '../components/ContactInfo';
 
 const RecordingInfoScreen = () => {
@@ -48,7 +48,7 @@ const RecordingInfoScreen = () => {
         for (let symptom of symptomSet) {
           messageToSendDoctor += symptom + ', ';
         }
-        console.log(messageToSendDoctor);
+        //console.log(messageToSendDoctor);
         setMessageToSend(messageToSendDoctor);
       })
       .catch((error) => {
@@ -127,36 +127,64 @@ const RecordingInfoScreen = () => {
             backgroundColor: '#881D1D',
           }}
           titleStyle={{
-            fontFamily: 'Raleway_400Regular',
+            fontWeight: '400'
           }}
         />
       </View>
+      <View style={{
+        height: 1.5,
+        width: "90%",
+        backgroundColor: "#CED0CE",
+      }}/>
       <View style={styles.contactList}>
-        <ScrollView>
           {contacts &&
-            contacts.map((contact) => (
-              <ContactInfo
-                key={contact.id}
-                contact={contact}
-                sendHealthSummary={sendHealthSummary}
-              />
-            ))}
-        </ScrollView>
+              <FlatList style={{height: 460}} data={contacts} keyExtractor={item => item.id} renderItem={({ item }) => (
+                  <Card key={item.id} containerStyle={styles.contactCard}>
+                    <Card.Title style={styles.doctorName}>
+                      {item.data.doctorName}
+                    </Card.Title>
+                    <Text style={styles.phoneNumber}>{item.data.phoneNumber}</Text>
+                    <Button
+                        style={{marginTop: 3, borderRadius: 20}}
+                        title='Send Summary'
+                        type='solid'
+                        onPress={() => {
+                          sendHealthSummary(item);
+                        }}
+                        containerStyle={{
+                          width: 150,
+                          height: 40
+                        }}
+                        buttonStyle={{
+                          backgroundColor: '#881D1D',
+                        }}
+                        titleStyle={{
+                          alignContent: 'center',
+                          fontWeight: '400',
+                          fontSize: 16
+                        }}
+                    />
+                  </Card>
+              )}>
+              </FlatList>
+            }
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     alignItems: 'center',
     paddingTop: 50,
   },
   titleHeader: {
+    marginTop: 15,
     fontSize: 40,
     color: '#881D1D',
-    fontFamily: 'Raleway_800ExtraBold',
+    fontWeight: 'bold',
   },
   inputLabelContainer: {
     width: 320,
@@ -175,22 +203,27 @@ const styles = StyleSheet.create({
     padding: 15,
     marginTop: 20,
     alignItems: 'center',
+    marginBottom: 10,
   },
   contactList: {
-    width: '95%',
+    width: '90%',
+    marginBottom: 20
   },
   contactCard: {
     alignItems: 'center',
+    borderRadius: 8,
   },
   doctorName: {
-    fontSize: 20,
+    marginTop: -5,
+    fontSize: 18,
     color: '#881D1D',
-    fontFamily: 'Raleway_600SemiBold',
+    fontWeight: 'bold'
+
   },
   phoneNumber: {
+    marginTop: -12,
     fontSize: 16,
     color: '#881D1D',
-    fontFamily: 'Raleway_600SemiBold',
     textAlign: 'center',
   },
 });
