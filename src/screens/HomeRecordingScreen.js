@@ -21,7 +21,6 @@ const HomeRecordingScreen = ({ navigation }) => {
   const [diseasePredictions, setDiseasePredictions] = useState([]);
 
   const determineArrayOfSymptomIndexes = (transcribedRecordingText) => {
-    console.log(symptomBank.length);
     let symptomNameToID = new Map();
     symptomBank.forEach((symptomObject) => {
       let symptomName = symptomObject.Name;
@@ -159,6 +158,7 @@ const HomeRecordingScreen = ({ navigation }) => {
   const handleOnPressOut = async () => {
     stopRecording();
     getTranscription().then(async (data) => {
+      setSymptomFormComplete(false);
       setGotRecording(true);
     });
   };

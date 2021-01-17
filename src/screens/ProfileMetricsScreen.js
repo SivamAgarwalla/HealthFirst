@@ -90,8 +90,12 @@ const HomeRecordingScreen = () => {
           >{` Sickness Rating ${formAverageData.sicknessRating}`}</Text>
         </View>
       </View>
-      <View style={styles.sharingSection}></View>
-      <View style={styles.analyticsSection}></View>
+      {recordings && (
+        <>
+          <View style={styles.symptomSection}></View>
+          <View style={styles.diseaseSection}></View>
+        </>
+      )}
     </View>
   );
 };
@@ -136,10 +140,10 @@ const styles = StyleSheet.create({
     color: '#6387CB',
     textAlign: 'center',
   },
-  sharingSection: {
+  symptomSection: {
     flex: 4,
   },
-  analyticsSection: {
+  diseaseSection: {
     flex: 10,
   },
 });
