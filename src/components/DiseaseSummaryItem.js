@@ -52,7 +52,6 @@ const DiseaseSummary = ({ timestamp, recordingDiseases }) => {
                     backgroundColor: 'transparent',
                   }}
                   thumbTintColor={'#811112'}
-                  onSlidingComplete={(value) => setPainRating(value)}
                 />
               </View>
             </View>
