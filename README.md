@@ -30,14 +30,19 @@ Jolie Ip | ipjolie1507@gmail.com
 * Firebase
 * ApiMedic Symptom Checker API
 
-  ![HealthFirst gif demo](./GIF/HealthFirst.gif)
-
-
 ## Prototype
-![alt text](https://user-images.githubusercontent.com/61493372/104864981-819e5f00-58ef-11eb-8c0d-8a16208d86d6.jpg)
-![alt text](https://user-images.githubusercontent.com/61493372/104864985-8400b900-58ef-11eb-95ef-fed3b4829a04.jpg)
-![alt text](https://user-images.githubusercontent.com/61493372/104864984-82cf8c00-58ef-11eb-853a-4f1af75d95a3.jpg)
-![alt text](https://user-images.githubusercontent.com/61493372/104864986-84994f80-58ef-11eb-872f-346f0f8828e4.jpg)
+
+![HealthFirst gif demo](./GIF/HealthFirst.gif)
+
+
+<img src="https://user-images.githubusercontent.com/61493372/104864981-819e5f00-58ef-11eb-8c0d-8a16208d86d6.jpg" width="100" height="100">
+
+<img src="https://user-images.githubusercontent.com/61493372/104864985-8400b900-58ef-11eb-95ef-fed3b4829a04.jpg" width="100" height="100">
+
+
+<img src="https://user-images.githubusercontent.com/61493372/104864984-82cf8c00-58ef-11eb-853a-4f1af75d95a3.jpg" width="100" height="100">
+
+<img src="https://user-images.githubusercontent.com/61493372/104864986-84994f80-58ef-11eb-872f-346f0f8828e4.jpg" width="100" height="100">
 
 
 
