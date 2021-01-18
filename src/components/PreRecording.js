@@ -7,6 +7,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import MicrophoneFade from "./MicrophoneFade";
 
 const PreRecording = ({ handleOnPressIn, handleOnPressOut, isRecording }) => {
   return (
@@ -15,19 +16,21 @@ const PreRecording = ({ handleOnPressIn, handleOnPressOut, isRecording }) => {
         <Text style={styles.titleHeader}>Feeling Sick?</Text>
       </View>
 
-      <View style={styles.recordingMic}>
+      <View style={styles.notRecordingMicBackground}>
         <TouchableOpacity
           onPressIn={handleOnPressIn}
           onPressOut={handleOnPressOut}
         >
-          <View
-            style={
-              isRecording
-                ? styles.recordingMicBackground
-                : styles.notRecordingMicBackground
+          <View style={styles.recordingMicBackground}>
+              {isRecording &&
+              <MicrophoneFade>
+                <FontAwesome name='microphone' size={130} color='#eeeae3'   />
+              </MicrophoneFade>
+              }
+            {!isRecording &&
+            <FontAwesome name='microphone' size={130} color='#eeeae3'/>
             }
-          >
-            <FontAwesome name='microphone' size={130} color='#f0f0f0' />
+
           </View>
         </TouchableOpacity>
       </View>
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
       ) / 2,
     width: Dimensions.get('window').width * 0.7,
     height: Dimensions.get('window').width * 0.7,
-    backgroundColor: '#B29576',
+    backgroundColor: '#CAB7A1',
     justifyContent: 'center',
     alignItems: 'center',
   },
