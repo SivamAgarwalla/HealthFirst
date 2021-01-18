@@ -35,14 +35,14 @@ const RecordingListItem = ({ recordingData, recordingID }) => {
               /\s+/g,
               ' '
             )}"`}</ListItem.Subtitle>
-            <View style={styles.formChips}>
+            <View style={styles.ratingFormChips}>
               <Badge
                 value={`Pain Rating: ${recordingData.recordingFormInput.painRating}`}
                 textStyle={{ fontSize: 15, fontFamily: 'Raleway_400Regular' }}
                 badgeStyle={{
                   backgroundColor: '#CAB7A1',
                   height: 25,
-                  width: 140,
+                  width: 125,
                   marginRight: 8,
                 }}
               />
@@ -52,7 +52,7 @@ const RecordingListItem = ({ recordingData, recordingID }) => {
                 badgeStyle={{
                   backgroundColor: '#CAB7A1',
                   height: 26,
-                  width: 140,
+                  width: 125,
                 }}
               />
             </View>
@@ -68,8 +68,8 @@ const RecordingListItem = ({ recordingData, recordingID }) => {
                   badgeStyle={{
                     backgroundColor: '#AC3834',
                     height: 26,
-                    width: 85,
-                    marginRight: 5
+                    width: 90,
+                    marginRight: 5,
                   }}
                 />
               ))}
@@ -115,9 +115,17 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     paddingLeft: 10,
   },
+  ratingFormChips: {
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    marginTop: 2,
+  },
   formChips: {
     flexDirection: 'row',
-    marginTop: 5,
+    flexWrap: 'wrap',
+    alignItems: 'stretch',
+    marginTop: 2,
+    marginBottom: 2,
   },
   symptomName: {
     color: '#6387CB',

@@ -31,7 +31,6 @@ const ProfileHeader = ({ userData, formAverageData }) => {
 const styles = StyleSheet.create({
   profileContainer: {
     flexDirection: 'row',
-    paddingTop: 15,
     justifyContent: 'center',
   },
   profilePhotoContainer: {

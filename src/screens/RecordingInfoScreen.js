@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { db, FirebaseContext } from '../context/FirebaseContext';
 import { Input, Card, Button, ListItem } from 'react-native-elements';
 import ContactInfo from '../components/ContactInfo';
@@ -127,54 +127,59 @@ const RecordingInfoScreen = () => {
             backgroundColor: '#881D1D',
           }}
           titleStyle={{
-            fontWeight: '400'
+            fontWeight: '400',
           }}
         />
       </View>
-      <View style={{
-        height: 1.5,
-        width: "90%",
-        backgroundColor: "#CED0CE",
-      }}/>
-      <View  style={styles.contactList}>
-          {contacts &&
-              <FlatList style={{height: '58%'}} data={contacts} keyExtractor={item => item.id} renderItem={({ item }) => (
-                  <Card key={item.id} containerStyle={styles.contactCard}>
-                    <Card.Title style={styles.doctorName}>
-                      {item.data.doctorName}
-                    </Card.Title>
-                    <Text style={styles.phoneNumber}>{item.data.phoneNumber}</Text>
-                    <Button
-                        style={{marginTop: 3, borderRadius: 20}}
-                        title='Send Summary'
-                        type='solid'
-                        onPress={() => {
-                          sendHealthSummary(item);
-                        }}
-                        containerStyle={{
-                          width: 150,
-                          height: 40
-                        }}
-                        buttonStyle={{
-                          backgroundColor: '#881D1D',
-                        }}
-                        titleStyle={{
-                          alignContent: 'center',
-                          fontWeight: '400',
-                          fontSize: 16
-                        }}
-                    />
-                  </Card>
-              )}>
-              </FlatList>
-            }
+      <View
+        style={{
+          height: 1.5,
+          width: '90%',
+          backgroundColor: '#CED0CE',
+        }}
+      />
+      <View style={styles.contactList}>
+        {contacts && (
+          <FlatList
+            style={{ height: '58%' }}
+            data={contacts}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Card key={item.id} containerStyle={styles.contactCard}>
+                <Card.Title style={styles.doctorName}>
+                  {item.data.doctorName}
+                </Card.Title>
+                <Text style={styles.phoneNumber}>{item.data.phoneNumber}</Text>
+                <Button
+                  style={{ marginTop: 3 }}
+                  title='Send Summary'
+                  type='solid'
+                  onPress={() => {
+                    sendHealthSummary(item);
+                  }}
+                  containerStyle={{
+                    width: 130,
+                    height: 40,
+                    marginLeft: 20,
+                  }}
+                  buttonStyle={{
+                    backgroundColor: '#881D1D',
+                  }}
+                  titleStyle={{
+                    fontWeight: '400',
+                    fontSize: 16,
+                  }}
+                />
+              </Card>
+            )}
+          ></FlatList>
+        )}
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     alignItems: 'center',
@@ -217,8 +222,7 @@ const styles = StyleSheet.create({
     marginTop: -5,
     fontSize: 18,
     color: '#881D1D',
-    fontWeight: 'bold'
-
+    fontWeight: 'bold',
   },
   phoneNumber: {
     marginTop: -12,
