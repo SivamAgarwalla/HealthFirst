@@ -30,9 +30,8 @@ Jolie Ip | ipjolie1507@gmail.com
 * Firebase
 * ApiMedic Symptom Checker API
 
-<div>
   ![HealthFirst gif demo](./GIF/HealthFirst.gif)
-</div>
+
 
 ## Prototype
 ![alt text](https://user-images.githubusercontent.com/61493372/104864981-819e5f00-58ef-11eb-8c0d-8a16208d86d6.jpg)
