@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Text, View, StyleSheet, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Image } from 'react-native';
 import { Input } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 import { FirebaseContext } from '../context/FirebaseContext';
@@ -36,7 +36,11 @@ const SignInScreen = ({ navigation }) => {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>HealthFirst</Text>
+      <Image
+        style={styles.tinyLogo}
+        source={require('../../assets/images/HealthFirst.png')}
+      />
+      <Text style={styles.title}></Text>
       <View style={styles.authContainer}>
         <Input
           containerStyle={styles.inputLabelContainer}
@@ -96,6 +100,10 @@ const styles = StyleSheet.create({
     color: '#881D1D',
     marginBottom: 20,
     fontFamily: 'Raleway_800ExtraBold',
+  },
+  tinyLogo: {
+    width: 300,
+    height: 300,
   },
   inputLabelContainer: {
     width: 320,

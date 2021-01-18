@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import { db, FirebaseContext } from '../context/FirebaseContext';
 import { UserContext } from '../context/UserContext';
 import { Button } from 'react-native-elements';
-import { AntDesign } from '@expo/vector-icons';
 import SymptomSummary from '../components/SymptomSummary';
 import DiseaseSummary from '../components/DiseaseSummary';
 import ProfileHeader from '../components/ProfileHeader';
@@ -48,6 +47,17 @@ const ProfileMetricScreen = () => {
 
   return (
     <View style={styles.container}>
+      <View style={{ alignItems: 'flex-end' }}>
+        <Button
+          title='Logout'
+          type='clear'
+          onPress={logOut}
+          titleStyle={{
+            color: '#881D1D',
+            fontFamily: 'Raleway_400Regular',
+          }}
+        />
+      </View>
       {userData && (
         <ProfileHeader userData={userData} formAverageData={formAverageData} />
       )}
@@ -67,7 +77,7 @@ const ProfileMetricScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
+    paddingTop: 35,
     alignItems: 'center',
     backgroundColor: 'white',
   },

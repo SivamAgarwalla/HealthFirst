@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+/*import { View, Text, StyleSheet } from 'react-native';*/
+import { View, Image, StyleSheet } from 'react-native';
 import { UserContext } from '../context/UserContext';
 import { FirebaseContext } from '../context/FirebaseContext';
 
@@ -29,10 +30,21 @@ const LoadingScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.loadingText}> Loading Screen </Text>
+      <Image
+        style={styles.tinyLogo}
+        source={require('../../assets/images/HealthFirst.png')}
+      />
     </View>
   );
 };
+/*  return (
+    <View style={styles.container}>
+      <Text style={styles.loadingText}>  </Text>
+    </View>
+  );
+};
+
+*/
 
 const styles = StyleSheet.create({
   container: {

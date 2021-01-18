@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
   listItemTitle: {
     fontFamily: 'Raleway_600SemiBold',
     alignItems: 'center',
-    fontSize: 16,
+    fontSize: 17,
+    marginBottom: 2,
   },
   diseaseItemTitle: {
     fontFamily: 'Raleway_400Regular',
