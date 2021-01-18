@@ -40,7 +40,7 @@ const MainStackScreens = () => {
         <Ionicons
           name={iconName}
           size={24}
-          color={focused ? '#a70000' : '#ff5252'}
+          color={focused ? '#881D1D' : '#CAB7A1'}
         />
       );
     },

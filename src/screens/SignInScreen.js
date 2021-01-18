@@ -36,10 +36,10 @@ const SignInScreen = ({ navigation }) => {
   };
   return (
     <View style={styles.container}>
-    <Image
-      style={styles.tinyLogo}
-      source={require('/Users/jolieipyingsee/Desktop/github/HealthFirst/assets/HealthFirst.png')}
-    />
+      <Image
+        style={styles.tinyLogo}
+        source={require('../../assets/images/HealthFirst.png')}
+      />
       <Text style={styles.title}></Text>
       <View style={styles.authContainer}>
         <Input
@@ -100,9 +100,7 @@ const styles = StyleSheet.create({
     color: '#881D1D',
     marginBottom: 20,
     fontFamily: 'Raleway_800ExtraBold',
-  }
-  ,
-
+  },
   tinyLogo: {
     width: 300,
     height: 300,
