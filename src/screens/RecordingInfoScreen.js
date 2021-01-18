@@ -136,9 +136,9 @@ const RecordingInfoScreen = () => {
         width: "90%",
         backgroundColor: "#CED0CE",
       }}/>
-      <View style={styles.contactList}>
+      <View  style={styles.contactList}>
           {contacts &&
-              <FlatList style={{height: 460}} data={contacts} keyExtractor={item => item.id} renderItem={({ item }) => (
+              <FlatList style={{height: '58%'}} data={contacts} keyExtractor={item => item.id} renderItem={({ item }) => (
                   <Card key={item.id} containerStyle={styles.contactCard}>
                     <Card.Title style={styles.doctorName}>
                       {item.data.doctorName}
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   contactList: {
     width: '90%',
-    marginBottom: 20
+    marginBottom: 20,
   },
   contactCard: {
     alignItems: 'center',
