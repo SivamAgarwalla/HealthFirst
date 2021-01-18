@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { db, FirebaseContext } from '../context/FirebaseContext';
+import { UserContext } from '../context/UserContext';
 import { Input, Card, Button, ListItem } from 'react-native-elements';
 import ContactInfo from '../components/ContactInfo';
 
@@ -9,6 +10,7 @@ const RecordingInfoScreen = () => {
   const [doctorName, setDoctorName] = useState('');
   const [recordings, setRecordings] = useState(null);
   const firebase = useContext(FirebaseContext);
+  const [state, seState] = useContext(UserContext);
   const currentUser = firebase.getCurrentUser();
   const [contacts, setContacts] = useState(null);
   const [messageToSend, setMessageToSend] = useState('');
@@ -29,7 +31,7 @@ const RecordingInfoScreen = () => {
 
   useEffect(() => {
     let symptomSet = new Set();
-    let messageToSendDoctor = 'Patient Name.\nSymptom List: ';
+    let messageToSendDoctor = 'Patient: ' + state.username + '\nSymptom List: ';
     db.collection('users')
       .doc(currentUser.uid)
       .collection('recordings')
@@ -48,7 +50,6 @@ const RecordingInfoScreen = () => {
         for (let symptom of symptomSet) {
           messageToSendDoctor += symptom + ', ';
         }
-        //console.log(messageToSendDoctor);
         setMessageToSend(messageToSendDoctor);
       })
       .catch((error) => {
@@ -75,8 +76,6 @@ const RecordingInfoScreen = () => {
   };
 
   const sendHealthSummary = (contact) => {
-    console.log(contact);
-    const bodyText = 'Placeholder summary for the patient!';
     try {
       fetch(
         'https://us-central1-twilio-302002.cloudfunctions.net/TwilioFunction',
