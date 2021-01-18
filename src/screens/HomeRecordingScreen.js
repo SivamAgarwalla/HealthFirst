@@ -8,6 +8,7 @@ import PostRecording from '../components/PostRecording';
 import recordingOptions from '../util/recordingOptions';
 import symptomBank from '../util/parseRecordingSymptoms';
 import axios from 'axios';
+import { Overlay } from 'react-native-elements';
 
 const HomeRecordingScreen = ({ navigation }) => {
   const firebase = useContext(FirebaseContext);
@@ -19,6 +20,7 @@ const HomeRecordingScreen = ({ navigation }) => {
   const [symptomFormComplete, setSymptomFormComplete] = useState(false);
   const [symptomNames, setSymptomNames] = useState([]);
   const [diseasePredictions, setDiseasePredictions] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
   const determineArrayOfSymptomIndexes = (transcribedRecordingText) => {
     let symptomNameToID = new Map();
@@ -130,6 +132,7 @@ const HomeRecordingScreen = ({ navigation }) => {
   };
 
   const getTranscription = async () => {
+    setIsFetching(true);
     try {
       const info = await FileSystem.getInfoAsync(recording.getURI());
       const uri = info.uri;
@@ -149,6 +152,7 @@ const HomeRecordingScreen = ({ navigation }) => {
       const data = await response.json();
       determineArrayOfSymptomIndexes(data.transcript.replace(/\s+/g, ' '));
       setQuery(data.transcript);
+      setIsFetching(false);
       return data.transcript;
     } catch (error) {
       console.log('There was an error reading file', error);
@@ -180,6 +184,9 @@ const HomeRecordingScreen = ({ navigation }) => {
           setSymptomFormComplete={setSymptomFormComplete}
         />
       )}
+      <Overlay isVisible={isFetching} overlayStyle={styles.overlayStyle}>
+        <Text style={styles.overlayText}>Fetching Transcript...</Text>
+      </Overlay>
     </View>
   );
 };
@@ -187,6 +194,19 @@ const HomeRecordingScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   homeContainer: {
     flex: 1,
+  },
+  overlayStyle: {
+    width: '80%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  overlayText: {
+    fontSize: 25,
+    color: '#881D1D',
+    fontFamily: 'Raleway_600SemiBold',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 20,
   },
 });
 
